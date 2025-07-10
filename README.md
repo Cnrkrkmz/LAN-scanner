@@ -1,7 +1,7 @@
 # Simple LAN scanner 
 
-This is a small project I built to scan my local network and find out which devices are connected. 
-It uses Python and Scapy to send ARP requests and shows the IP and MAC addresses of devices that respond.
+- This is a small project I built to scan my local network and find out which devices are connected. 
+- It uses Python and Scapy to send ARP requests and shows the IP and MAC addresses of devices that respond.
 
 # What It Does
 
@@ -11,9 +11,9 @@ It uses Python and Scapy to send ARP requests and shows the IP and MAC addresses
 
 # Limitations
 
-Some devices (like phones) might not respond to ARP unless they’re actively using the network
-ICMP (ping) helps, but not always
-Tested on macOS and Kali Linux. Probably won’t work on Windows as-is.
+- Some devices (like phones) might not respond to ARP unless they’re actively using the network
+- ICMP (ping) helps, but not always
+- Tested on macOS and Kali Linux. Probably won’t work on Windows as-is.
 
 # Example Output
 
