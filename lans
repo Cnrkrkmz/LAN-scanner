@@ -1,23 +1,19 @@
 import os
-import ipaddress
-import concurrent.futures
 from scapy.all import ARP, Ether, srp
 
 ip_range = "192.168.1.0/24"
-
-#WİNDOWSTA ÇALIŞMAZ 
 
 ether = Ether(dst = "ff:ff:ff:ff:ff:ff") # Broadcast address
 
 arp = ARP(pdst= ip_range) #pdst is where the arp packet should go
 
 packet = ether / arp #send the arp request buried inside the broadcast address as a whole packet
-result = srp(packet, timeout=4, verbose=0)[0] #srp output results in two different situations as answered and unanswered so we just get 
+result = srp(packet, timeout=2, verbose=0)[0] #srp output results in two different situations as answered and unanswered so we just get 
                                               #the first variable which is answered with [0]
                                               #and answered returns a list which all its elements are a tuple (sent, recieved)
 devices = []
 for sent, received in result:
-    devices.append({'IP': received.psrc, 'MAC': received.hwsrc})
+    devices.append({'IP': received.psrc, 'MAC': received.hwsrc}) #psrc for ip address, hwsrc for mac address
 
 for device in devices:
     print(f'IP: {device["IP"]} \nMAC: {device["MAC"]}')
