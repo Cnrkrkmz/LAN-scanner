@@ -1,20 +1,9 @@
 import os
 import ipaddress
-import threading
+import concurrent.futures
 from scapy.all import ARP, Ether, srp
 
-ip_range = "192.168.1.0/24" # C class subnet
-
-threads=[]
-
-for _ in range(253):
-    t = threading.Thread(target=ping_devices)
-    t.start()
-    threads.append(t)
-
-def ping_devices(ip_range):
-    for ip in ipaddress.IPv4Network(ip_range).hosts():
-        os.system(f"ping -c 1 {ip} > /dev/null 2>&1") #wont show any output or error messages pings every ip once
+ip_range = "192.168.1.0/24"
 
 #WİNDOWSTA ÇALIŞMAZ 
 
