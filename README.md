@@ -15,6 +15,11 @@
 - ICMP (ping) helps, but not always
 - Tested on macOS and Kali Linux. Probably won’t work on Windows as-is.
 
+- ## Note
+
+I eventually decided to quit working on this project because I ran into a lot of inconsistencies — some devices wouldn't show up reliably, and the responses varied depending on their network behavior or power-saving settings. Too many edge cases made it hard to build a fully reliable tool.
+
+
 # Example Output
 
 IP: 192.168.1.1
