@@ -27,4 +27,5 @@ MAC: 90:9a:4a:a3:f0:86
 IP: 192.168.1.108
 MAC: 2a:bb:c1:80:4a:9f
 
-It should be run as "sudo"
+- It should be run as "sudo"
+- It works slow for now
