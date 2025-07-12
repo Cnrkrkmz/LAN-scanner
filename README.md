@@ -15,10 +15,10 @@
 - ICMP (ping) helps, but not always
 - Tested on macOS and Kali Linux. Probably won’t work on Windows as-is.
 
+
 - ## Note
 
-I eventually decided to quit working on this project because I ran into a lot of inconsistencies — some devices wouldn't show up reliably, and the responses varied depending on their network behavior or power-saving settings. Too many edge cases made it hard to build a fully reliable tool.
-
+- Because of some devices might not respond to ARP and ICMP i have implemented an arp-cache reader. When we ping devices with ICMP we get their MAC addresses in OS level, this way we dont engage with any security issues and even if the comminucated devices dont show up on the output of the code they will still appear in arp cache
 
 # Example Output
 
@@ -28,4 +28,3 @@ IP: 192.168.1.108
 MAC: 2a:bb:c1:80:4a:9f
 
 - It should be run as "sudo"
-- It works slow for now
